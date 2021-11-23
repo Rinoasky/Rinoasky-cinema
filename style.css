@@ -1,0 +1,514 @@
+/*Главная страница*/
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+p {
+	font-family: Arial, sans-serif;
+	color: gray;
+
+}
+li {
+list-style-type: none;
+}
+
+
+
+body {
+	background-color: #f4f4f4;
+
+
+
+}
+
+.conteiner {
+	display: grid;
+	width: 65%;
+	background-color: #64c5db;
+	margin-left: auto;
+    margin-right: auto;
+	grid-template-columns: 3.5fr 1.5fr;
+	grid-template-rows: 140px 200px auto 48px;
+	grid-template-areas: 
+	"header header"
+    "main aside"
+    "main aside"
+    "footer footer";
+}
+
+
+header {
+	background-color: black;
+	width: 100%;
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+
+   }
+
+
+h1 {
+	
+	color: #64c5db;
+	font-family: Arial, sans-serif;
+	font-size: 3.3em;
+	text-shadow: 2px 1px;
+	padding-left: 15px;
+	padding-top: 15px;
+
+
+}
+
+a h1:hover {
+	background-size: 100% 1px;
+
+}
+
+
+a h1 {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+
+/*Анимация пульс*/
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+
+
+nav {
+	padding-right: 10px;
+	display: flex;
+
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	padding-top: 90px;
+}
+
+
+nav ul li {
+	padding-left: 40px;
+}
+
+nav ul li a {
+	font-size: 2em;
+
+}
+
+
+nav ul li.selected a {
+	color: #64c5db;
+
+}
+
+nav ul li a:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+
+
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 350px;
+     z-index: 1;
+
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+
+
+}
+
+
+
+
+
+aside {
+	grid-area: aside;
+	background-color: white;
+	max-height: 1035px;
+
+
+
+}
+
+.aside_1 {
+	width: 100%;
+	height: 50%;
+	background-color: white;
+	outline: 5px solid #64c5db;
+    outline-offset: -5px;
+
+}
+
+
+.news {
+	padding-left: 15px;
+	padding-top: 15px;
+	font-size: 1.2em;
+	line-height: 1.5;
+	font-weight: bold;
+
+}
+
+
+.aside_2 {
+	display: grid;
+	width: 100%;
+	height: 50%;
+	background-color: white;
+	outline: 5px solid #64c5db;
+    outline-offset: -5px;
+
+
+
+}
+
+.aside_1 h2 {
+	color: black;
+	text-align: center;
+	padding-top: 7px;
+	font-family: Arial, sans-serif;
+	background-color: #64c5db;
+	height: 39px;
+
+}
+
+.aside_2 h2 {
+	color: black;
+	text-align: center;
+	padding-top: 7px;
+	font-family: Arial, sans-serif;
+	background-color: #64c5db;
+	height: 39px;
+}
+
+
+
+.filmlist {
+	padding-left: 15px;
+	padding-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+	color: grey;
+	font-family: Arial, sans-serif;
+	min-height: 370px;
+	line-height: 1.5;
+
+
+}
+
+
+main {
+	grid-area: main;
+	background-color: #64c5db;
+	margin-top: 5px;	
+	margin-bottom: 5px;
+
+	
+
+
+}
+
+.movies-cards {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, auto));
+    column-gap: 15px;
+    row-gap: 15px;
+    overflow:hidden;
+    animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite
+
+  
+  
+}
+
+.movies-cards img {
+	height: 193px;
+    width: 800px;
+    transition: 1s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.movies-cards img:hover {
+    transform: scale(1.2);
+}
+
+footer {
+	grid-area: footer;
+	background-color: black;
+
+}
+
+footer p {
+	color: white;
+	text-align: center;
+	font-size: large;
+	padding-top: 12px;
+}
+
+
+
+/*Страница Режиссеры*/
+
+.autors2 {
+	background-color: white;
+	height: 230px;
+	margin-left: 0;
+	margin-top: 1px;
+	margin-right: 1px;
+	border: 1px solid grey;
+	padding: 5px;
+	
+-webkit-transition: margin 1s ease;
+-moz-transition: margin 1s ease;
+-o-transition: margin 1s ease;
+-ms-transition: margin 1s ease;
+transition: margin 1s ease;
+	 -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+	
+
+}
+
+
+.autors2:hover {
+   animation: bounce 1s;
+   -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  margin-left: -200px;
+
+
+}
+
+
+.autors2::after {
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+}
+    
+/*Анимация потряска*/
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+
+.autors2 img {
+	width: 300px;
+	height: 230px;
+
+}
+
+.image {
+	float: left;
+	margin-right: 10px;
+
+}
+
+.text {
+	font-size: 1.3em;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+
+}
+
+.text h2 {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	margin-bottom: 10px;
+	color: white;
+	background-color: black;
+}
+
+
+
+
+/*Жанры*/
+
+
+.films {
+	min-height: 300px;
+	background-color: #f7f5f5;
+	border: 2px solid lightgrey;
+	margin-left: 0;
+	margin-top: 1px;
+	margin-right: 1px;
+	padding: 5px;
+	border-radius: 5px 5px;
+
+}
+
+.films h2 {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 2em;
+	background-color: lightgrey;
+	font-weight: 800;
+}
+
+
+.films:hover {
+	background-color: white;
+	border: 2px solid grey;
+}
+
+
+.films ul {
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.films ul li {
+	font-size: 107%;
+	font-weight: 500;
+}
+
+.genre_name {
+	height: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 900;
+	padding-top: 20px ;
+
+}
+
+
+
+/*Сериалы*/
+
+
+.serials_h2 {
+	height: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 900;
+	padding-top: 20px ;
+
+}
+
+
+.all_serials {
+	display: flex;
+	flex-wrap: wrap;
+	
+
+
+}
+
+.serials {
+	display: flex;
+	height: 300px;
+	width: 281px;
+	background-color: white;
+	border: 1px solid black;
+	margin-top: 5px;
+	margin-left: 5px;
+	position: relative;
+
+
+}
+
+
+
+.serials h3 {
+  position: absolute;
+  font-size: 2em;
+  bottom: 5px;
+  left: 80px;
+  background-color: black;
+  color: #f7f4f4;
+  
+
+
+}
+
+
+.serials img {
+	height: 300px;
+	width: 281px;
+
+}
